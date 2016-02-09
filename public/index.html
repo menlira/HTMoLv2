@@ -1,0 +1,41 @@
+﻿<!--Licensed under the MIT license.
+http://www.opensource.org/licenses/mit-license.php
+
+this file is part of HTMoL:
+Copyright (C) 2014  Alvarez Rivera Leonardo,Becerra Toledo Francisco Javier, Vega Ramirez Adan -->
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>HTMOL</title>  
+    <script src="js/three.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+    <script src="js/TrackballControls.js"></script>
+    <script src="js/Process.js"></script>
+    <script src="js/3D.js"></script>
+    <script src="js/Tools.js"></script>
+    <script src="js/Support.js"></script>
+    <script src="js/Representations.js"></script>
+    <script src="js/Main.js"> </script>
+    <script src='js/Menu.js'></script>
+    <link rel='stylesheet' href='styles/sizeHTMol.css' media='screen'>  
+    <script type="text/javascript">
+    var client = new BinaryClient('ws://localhost:9000');
+    client.on('open', function(stream, meta){
+	URLS={	           
+	   '1crn':{name:"1CRN",url:"http://www.rcsb.org/pdb/files/1CRN.pdb"},
+       '149L':{name:"149L",url:"http://www.rcsb.org/pdb/files/149L.pdb"},
+       '1X9D':{name:"1X9D",url:"http://www.rcsb.org/pdb/files/1X9D.pdb"}
+	};
+    var ObjParameters = new Parameters(); 
+    ObjParameters.SetBackgroundColor(0x000000);
+    }
+    </script>
+</head>
+<body>
+<div id="Contenedor"> 
+<div id="WebGL-Out"  style="height:0px;"></div> <!-- not change value -->
+<div id='data'></div>
+</div>
+</body>
+   
+</html> 

@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="content-language" content="es" /> 
+<title>speed</title>
+<script type="text/javascript">
+var imageAddr = "speedtest.jpg" + "?n=" + Math.random() ;
+var startTime, endTime ;
+var downloadSize = 81877; 
+var download = new Image() ; 
+download.onload = function() { 
+endTime = (new Date()).getTime() ; 
+showResults () ;
+}
+startTime = (new Date()).getTime() ; 
+download.src = imageAddr ;
+function showResults () {
+var duration = Math.round((endTime - startTime) / 1000) ; 
+var bitsLoaded = downloadSize * 8 ;
+var speedBps = Math.round(bitsLoaded / duration) ;
+var speedKbps = (speedBps / 1024).toFixed(2) ;
+var speedMbps = (speedKbps / 1024).toFixed(2) ;
+alert ("La velocidad de tu conexión es: \n" +
+speedBps + " bps\n" +
+speedKbps + " kbps\n" +
+speedMbps + " Mbps\n") ;
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>
